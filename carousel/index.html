@@ -145,16 +145,25 @@
 			background-color: red;;
 		}
 		
+		.navbar-brand {
+			font-size: 1.8em;
+		}
+		
+		.contentDiv { 
+			padding-top: 40px;
+			min-height: 40em;
+		}
+		
 	</style>
 	
 	
   </head>
-  <body>
+  <body data-spy="scroll" data-target=".navbar-collapse">
 	  
   	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="container">
 	  		<div class="navbar-header">
-				<a href="#" class="navbar-brand">Carousel Time</a>
+				<a href="#" class="navbar-brand">Carousels / Sliders Demo</a>
 				<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="sr-only"></span>
 					<span class="icon-bar"></span>
@@ -162,7 +171,7 @@
 					<span class="icon-bar"></span>
 				</button>
 			</div>
-	  		<div class="collapse navbar-collapse">
+	  		<div class="collapse navbar-collapse navbar-right">
 	  			<ul class="nav navbar-nav">
 	  				<li class="active"><a href="#slider1">Slider 1</a></li>
 	  				<li><a href="#slider2">Slider 2</a></li>
@@ -173,7 +182,7 @@
   	</div>
 	
 	
-	<div id="slider1" class="container">
+	<div id="slider1" class="container contentDiv">
 		<h2>Simple Image Slider</h2>
 		<div class="row">
 			<div id="carousel1" class="carousel slide col-sm-9" >
@@ -214,7 +223,7 @@
 		</div>
 	</div>
 
-	<div id="slider2" class="container">
+	<div id="slider2" class="container contentDiv">
 		<h2>Image Slider With Overlays</h2>
 		<div class="row">
 			<div id="carousel2" class="carousel slide col-sm-9" data-ride="carousel">
@@ -288,7 +297,7 @@
 		</div>
 	</div>
 
-	<div id="slider3" class="container">
+	<div id="slider3" class="container contentDiv">
 		<h2>Slider with Video and Image</h2>
 		<div class="row">
 			<div id="myCarousel" class="carousel slide col-sm-9" data-ride="carousel" >
@@ -343,6 +352,8 @@
 	</div>
 	
 	<script>
+	
+	$('.contentDiv').css("min-height",$(window).height()-120);
 	   
 	   $('#myCarousel').on('slide.bs.carousel', function (e) {
 		   if(e.relatedTarget.firstElementChild.id != "player1") {
